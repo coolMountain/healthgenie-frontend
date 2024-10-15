@@ -1,0 +1,325 @@
+/* App.css */
+.app-container {
+  display: flex;
+  height: 100vh;
+  background-color: #f4f4f4;
+  font-family: Arial, sans-serif;
+}
+
+/* 夜间模式样式 */
+.app-container.dark-mode {
+  background-color: #2e2e2e;
+  color: white;
+}
+
+.app-container.dark-mode .sidebar {
+  background-color: #3e3e3e;
+}
+
+.app-container.dark-mode .main-content {
+  background-color: #2e2e2e;
+}
+
+.app-container.dark-mode .chat-display {
+  background-color: #4e4e4e;
+}
+
+.app-container.dark-mode input,
+.app-container.dark-mode button {
+  background-color: #555;
+  color: white;
+}
+
+.app-container.dark-mode .sidebar ul li:hover {
+  background-color: #555;
+}
+
+/* 左侧导航栏 */
+.sidebar {
+  width: 20%;
+  background-color: #ffffff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  overflow-y: auto;
+}
+
+.new-conversation {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+.sidebar ul li {
+  margin: 15px 0;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+.sidebar ul li:hover {
+  background-color: #f0f0f0;
+}
+
+/* 历史聊天记录 */
+.history-section h2 {
+  margin-top: 20px;
+}
+
+.history-section ul {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+.history-section ul li {
+  margin: 10px 0;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  background-color: #eaeaea;
+  transition: background-color 0.3s;
+}
+
+.history-section ul li:hover {
+  background-color: #d5d5d5;
+}
+
+/* 主内容部分 */
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 顶部导航栏 */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-right button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px;
+  margin-left: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.top-right button:hover {
+  background-color: #45a049;
+}
+
+/* 设置弹窗 */
+.settings-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  width: 400px;
+}
+
+.modal-content h2 {
+  margin-top: 0;
+}
+
+.modal-content label {
+  display: block;
+  margin: 15px 0;
+}
+
+.modal-content button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* 预设提示部分样式 */
+.preset-prompts {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.preset-prompt-button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 15px;
+  margin: 5px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.preset-prompt-button:hover {
+  background-color: #45a049;
+}
+
+/* 聊天记录展示 */
+.chat-display {
+  flex-grow: 1;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-message {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 10px;
+}
+
+.chat-message.user {
+  justify-content: flex-end;
+}
+
+.chat-message.bot {
+  justify-content: flex-start;
+}
+
+.message-avatar {
+  width: 40px;
+  height: 40px;
+  margin: 0 10px;
+}
+
+.message-avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.message-content {
+  max-width: 60%;
+  padding: 10px;
+  border-radius: 10px;
+  word-wrap: break-word;
+  position: relative;
+}
+
+.chat-message.user .message-content {
+  background-color: #4caf50;
+  color: white;
+  border-bottom-right-radius: 0;
+}
+
+.chat-message.bot .message-content {
+  background-color: #e0e0e0;
+  color: black;
+  border-bottom-left-radius: 0;
+}
+
+.message-timestamp {
+  font-size: 12px;
+  color: #555;
+  margin-left: 5px;
+}
+
+.message-timestamp.user {
+  text-align: right;
+}
+
+.message-timestamp.bot {
+  text-align: left;
+}
+
+/* 加载指示器 */
+.loading-indicator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #4caf50;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* 输入框与发送按钮 */
+.input-container {
+  display: flex;
+  margin-top: 10px;
+}
+
+input {
+  flex-grow: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-left: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* 设置部分 */
+.settings-container {
+  margin-top: 20px;
+}
+
+.settings-container label {
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.settings-container input[type="checkbox"] {
+  transform: scale(1.5);
+}
